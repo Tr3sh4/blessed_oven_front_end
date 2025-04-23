@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessed Oven | Order Now</title>
+    
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="Order.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <img src="https://icon-library.com/images/cake-icon/cake-icon-9.jpg" alt="Logo" class="navbar-logo">
+    <div class="nav-links">
+        <a href="LandingPage.html">Home</a>
+        <a href="Products.html">Products</a>
+        <a href="About.html">About</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Reviews.html">Reviews</a>
+    </div>
+    <div class="auth-buttons">
+        <a href="Order.html">
+            <button class="Order-btn">Order Now</button>
+        </a>
+    </div>
+</nav>
+
+<!-- Order Form Section -->
+<div class="container order-container">
+    <h2>Order Now</h2>
+    <form action="/submit-order" method="POST">
+        <!-- Category Selector -->
+<div class="form-group">
+    <label for="category">Select Category</label>
+    <select id="category" name="category" required onchange="updateProducts()" class="form-control">
+        <option value="" disabled selected>Select a category</option>
+        <option value="cakes">Cakes</option>
+        <option value="cupcakes">Cupcakes</option>
+        <option value="pies">Pies</option>
+        <option value="donuts">Donuts</option>
+        <option value="cookies">Cookies</option>
+    </select>
+</div>
+
+        <!-- Product Selector and Quantity in Same Row -->
+        <div class="form-group row">
+            <!-- Product Selector Column -->
+            <div class="col-md-4">
+                <label for="product">Select Product</label>
+                <select id="product" name="product" required class="form-control">
+                    <option value="" disabled selected>Select a product</option>
+                </select>
+            </div>
+
+            <!-- Quantity Input Column -->
+            <div class="col-md-4">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required class="form-control">
+            </div>
+
+            <!-- Price Display Column -->
+            <div class="col-md-4">
+                <label for="price">Price</label>
+                <input type="text" id="price" name="price" readonly class="form-control" value="0">
+            </div>
+        </div>
+
+        <!-- Add More Products Button -->
+<div class="form-group">
+    <div class="d-flex justify-content-center">
+        <button type="button" id="add-product-btn" class="btn btn-add mx-2">Add Another Product</button>
+        <button type="button" id="remove-product-btn" class="btn btn-remove mx-2">Remove Product</button>
+    </div>
+</div>
+
+<!-- Add space between buttons and total amount section -->
+<div class="mb-4"></div> <!-- Add margin-bottom -->
+
+<!-- Total Amount, Downpayment, and Enter 50% Amount Row -->
+<div class="form-group row">
+    <!-- Total Amount Column -->
+    <div class="col-md-4">
+        <label for="total-amount">Total Amount</label>
+        <input type="text" id="total-amount" name="total-amount" readonly class="form-control" value="0">
+    </div>
+
+    <!-- Downpayment Column -->
+    <div class="col-md-4">
+        <label for="downpayment">50% Downpayment</label>
+        <input type="text" id="downpayment" name="downpayment" readonly class="form-control" value="0">
+    </div>
+
+    <!-- Amount for 50% Downpayment Column -->
+<div class="col-md-4">
+    <label for="downpayment-amount">Downpayment Amount</label>
+    <input type="number" id="downpayment-amount" name="downpayment-amount" class="form-control" required placeholder="Enter downpayment amount">
+</div>
+</div>
+      
+        <!-- Transaction Number -->
+<div class="form-group">
+    <label for="transaction-number">Transaction Number</label>
+    <input type="text" id="transaction-number" name="transaction-number" class="form-control" placeholder="Enter transaction number">
+</div>
+
+
+        <!-- Delivery Date -->
+        <div class="form-group">
+            <label for="delivery-date">Select Delivery Date</label>
+            <input type="date" id="delivery-date" name="delivery-date" required class="form-control">
+        </div>
+
+        <!-- Other Inputs -->
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required class="form-control">
+        </div>
+
+        <div class="form-group">
+             <label for="phone">Phone Number:</label>
+             <input type="tel" id="phone" name="phone" required pattern="09[0-9]{9}" placeholder="09xxxxxxxxx">
+        </div>
+        <div class="form-group">
+            <label for="address">Shipping Address</label>
+            <textarea id="address" name="address" placeholder="Enter your shipping address" required class="form-control" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Place Order</button>
+    </form>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo and description -->
+        <div class="footer-logo">
+          <img src="" alt="Blessed Oven Logo"> 
+            <p>Your Favorite Bakeshop in Pasig City.<br>Delicious freshly baked goods made with love every day.</p>
+        </div>
+
+        <!-- Menu -->
+        <div class="footer-links">
+            <h4>MENU</h4>
+            <ul>
+                <li><a href="LandingPage.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="About.html">AboutUs</a></li>
+                <li><a href="ContactUs.html">Contact</a></li>
+                <li><a href="Reviews.html">Reviews</a></li>
+            </ul>
+        </div>
+
+<!-- Contact info -->
+<div class="footer-contact">
+    <h4>CONTACT US</h4>
+    <p>Email: info@blessedoven.com</p>
+    <p>Phone: +1 (123) 456-7890</p>
+    <p>Address: 123 Blessed Avenue, Pasig City</p>
+</div>
+
+<!-- Social media links -->
+<div class="footer-social">
+    <h4>FOLLOW US</h4>
+    <div class="social-icons">
+        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+    </div>
+</div>
+</div>
+
+<div class="footer-bottom">
+    <p>&copy; 2024 Blessed Oven. All rights reserved.</p>
+</div>
+</footer>
+
+<!-- Bootstrap and jQuery JS -->
+<script src="Order.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

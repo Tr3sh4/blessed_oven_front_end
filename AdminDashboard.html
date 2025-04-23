@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessed Oven | Dashboard</title>
+    <link rel="stylesheet" href="AdminDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For Icons -->
+</head>
+<body>
+
+<!-- Navbar Section -->
+<div class="navbar">
+    <img src="Admin-SwiftEnrollLogo.png" alt="Logo" class="logo">
+    <a href="AdminDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="AdminForm.html"><i class="fas fa-user-graduate"></i>Customers</a>
+    <a href="AdminOrders.html"><i class="fas fa-book"></i>Orders</a>
+    <a href="AdminInventory.html"><i class="fas fa-book"></i>Inventory</a>
+    <a href="AdminSales.html"><i class="fas fa-wallet"></i> Sales</a>
+    
+    <div class="logout">
+        <!-- Add onclick event to trigger logout confirmation -->
+        <a href="javascript:void(0);" onclick="confirmLogout();"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+</div>
+    
+    <!-- Header Section with Admin Name -->
+    <div class="header">
+      <div class="user-info">
+        <i class="fa fa-user"></i>
+        <span>Hello, Admin</span>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="text-center mt-5">
+            <div class="welcome-card">
+                <p class="card-title">Admin</p>
+                <p class="card-subtitle">Your dashboard overview is here.</p>
+            </div>
+
+        <!-- Dashboard Stats Cards -->
+        <div class="dashboard-row mt-5">
+            <!-- Total Customers Card -->
+            <div class="card-custom text-center">
+                <div class="card-icon">
+                    <i class="fas fa-users fa-3x"></i>
+                </div>
+                <p class="card-title mt-3">Total Customers</p>
+                <p class="card-value">5</p>
+            </div>
+
+            <!-- Total Sales Card -->
+            <div class="card-custom text-center">
+                <div class="card-icon">
+                    <i class="fas fa-book fa-3x"></i>
+                </div>
+                <p class="card-title mt-3">Total Sales</p>
+                <p class="card-value">100</p>
+            </div>
+
+            <!-- Total Confirm Card -->
+            <div class="card-custom text-center">
+                <div class="card-icon">
+                    <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                </div>
+                <p class="card-title mt-3">Confirm Orders</p>
+                <p class="card-value">5</p>
+            </div>
+
+            <!-- Total Pending Card -->
+            <div class="card-custom text-center">
+                <div class="card-icon">
+                    <i class="fas fa-users fa-3x"></i>
+                </div>
+                <p class="card-title mt-3">Pending Orders</p>
+                <p class="card-value">5</p>
+            </div>
+
+            <!-- Cancel Orders Card -->
+            <div class="card-custom text-center">
+                <div class="card-icon">
+                    <i class="fas fa-users fa-3x"></i>
+                </div>
+                <p class="card-title mt-3">Cancel Orders</p>
+                <p class="card-value">5</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="AdminDashboard.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #3E2723; /* Dark Brown */
+    --secondary-color: #A1887F; /* Light Olive Green */
+    --accent-color: #FBC02D; /* Golden Yellow */
+    --background-color: #F5F5F5; /* Light Cream */
+    --text-color: #ffffff; /* White */
+    --hover-color: #8D6E63; /* Lighter Brown for hover */
+    --hover-text-color: #2D2D2D; /* Dark Text for Hover */
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo styling */
+.navbar-logo {
+    height: 40px;
+    width: 40px; /* Ensure the width is equal to the height */
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: cover; /* Ensures the image fits within the circle */
+}
+
+/* Centered navigation links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FBC02D; /* Dark Text when Hovered */
+    text-decoration: none;
+}
+
+/* Hover underline effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color); /* Golden Yellow Underline */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* General button styling */
+.auth-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: var(--accent-color); /* Golden Yellow */
+    color: var(--primary-color); /* Dark Brown Text */
+    text-align: center;
+    display: inline-block;
+}
+
+/* Hover effect */
+.auth-buttons button:hover {
+    background-color: var(--hover-color); /* Lighter Brown on hover */
+    transform: translateY(-3px); /* Lift effect */
+}
+
+/* Active (clicked) effect */
+.auth-buttons button:active {
+    transform: translateY(1px); /* Slight drop effect when clicked */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .auth-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .auth-buttons button {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px 0;
+    }
+}
+.footer {
+    background-color: var(--primary-color); 
+    color: var(--text-color);
+    padding: 40px 20px;
+    margin-bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    max-width: 300px;
+    font-size: 14px;
+    color: #d3d3d3;
+}
+
+.footer-links, .footer-contact, .footer-social {
+    margin-top: 20px;
+}
+
+.footer-links h4, .footer-contact h4, .footer-social h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+}
+
+.footer-links ul li a {
+    color: #d3d3d3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-contact p {
+    font-size: 14px;
+    color: #d3d3d3;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social .social-icons a img {
+    width: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social .social-icons a:hover img {
+    transform: scale(1.2);
+}
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    color: #d3d3d3;
+    padding: 15px 0;
+    margin-top: 0; 
+}
+
+/* Styling for the feature cards container */
+.feature-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styling for each feature card */
+.feature-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 350px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+/* Hover effects for feature cards */
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.feature-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Styling for the product title */
+.feature-card h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Styling for the product description */
+.feature-card p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Styling for the "Order Now" button */
+.feature-card .btn-secondary {
+    background-color: #f7a700;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+/* Hover effect for the button */
+.feature-card .btn-secondary:hover {
+    background-color: #e68a00;
+}
+
+/* Center the content section */
+.content-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .feature-card-container {
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .feature-card img {
+        height: 200px;
+    }
+
+    .feature-card h4 {
+        font-size: 20px;
+    }
+
+    .feature-card p {
+        font-size: 14px;
+    }
+
+    .feature-card .btn-secondary {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+    header {
+        background-color: #8D6E63; /* Dark Blue */
+        color: white; /* White text for contrast */
+        text-align: center;
+        padding: 20px 0;
+    }

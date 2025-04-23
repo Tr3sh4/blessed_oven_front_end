@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #3E2723; /* Dark Brown */
+    --secondary-color: #A1887F; /* Light Olive Green */
+    --accent-color: #FBC02D; /* Golden Yellow */
+    --background-color: #F5F5F5; /* Light Cream */
+    --text-color: #ffffff; /* White */
+    --hover-color: #8D6E63; /* Lighter Brown for hover */
+    --hover-text-color: #2D2D2D; /* Dark Text for Hover */
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo styling */
+.navbar-logo {
+    height: 40px;
+    width: 40px; /* Ensure the width is equal to the height */
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: cover; /* Ensures the image fits within the circle */
+}
+
+/* Centered navigation links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FBC02D; /* Dark Text when Hovered */
+    text-decoration: none;
+}
+
+/* Hover underline effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color); /* Golden Yellow Underline */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* General button styling */
+.auth-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: var(--accent-color); /* Golden Yellow */
+    color: var(--primary-color); /* Dark Brown Text */
+    text-align: center;
+    display: inline-block;
+}
+
+/* Hover effect */
+.auth-buttons button:hover {
+    background-color: var(--hover-color); /* Lighter Brown on hover */
+    transform: translateY(-3px); /* Lift effect */
+}
+
+/* Active (clicked) effect */
+.auth-buttons button:active {
+    transform: translateY(1px); /* Slight drop effect when clicked */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .auth-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .auth-buttons button {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px 0;
+    }
+}
+
+.footer {
+    background-color: var(--primary-color); 
+    color: var(--text-color);
+    padding: 40px 20px;
+    margin-bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    max-width: 300px;
+    font-size: 14px;
+    color: #d3d3d3;
+}
+
+.footer-links, .footer-contact, .footer-social {
+    margin-top: 20px;
+}
+
+.footer-links h4, .footer-contact h4, .footer-social h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+}
+
+.footer-links ul li a {
+    color: #d3d3d3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-contact p {
+    font-size: 14px;
+    color: #d3d3d3;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social .social-icons a img {
+    width: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social .social-icons a:hover img {
+    transform: scale(1.2);
+}
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    color: #d3d3d3;
+    padding: 15px 0;
+    margin-top: 0; 
+}
+
+/* About Section Styling */
+.about-section {
+    background-color: var(--background-color);
+    padding: 60px 20px;
+}
+
+/* About Container */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Adds spacing between the text and image */
+    align-items: center;
+    justify-content: center;
+}
+
+/* About Text Styling */
+.about-text {
+    flex: 1 1 500px; /* Allows the text to be flexible but at least 500px wide */
+    color: var(--primary-color);
+}
+
+.about-text h2 {
+    font-size: 2.8rem; /* Large heading size */
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #4a4a4a;
+}
+
+/* About Image Styling */
+.about-image {
+    flex: 1 1 400px; /* Image will also be flexible, but at least 400px wide */
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow around image */
+    object-fit: cover; /* Ensure the image fills its container while maintaining aspect ratio */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Stack the text and image vertically on small screens */
+    .about-container {
+        flex-direction: column;
+        text-align: center; /* Center the text on mobile */
+    }
+
+    /* Adjust heading size for mobile */
+    .about-text h2 {
+        font-size: 2.2rem;
+    }
+
+    /* Adjust paragraph font size for better readability on mobile */
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    /* Make sure the image doesn’t get too small */
+    .about-image {
+        flex: 1 1 80%; /* Image will now take up most of the width on smaller screens */
+        margin-top: 20px; /* Adds space between the text and image */
+    }
+}

@@ -1,0 +1,305 @@
+:root {
+    --primary-color: #3E2723;
+    --secondary-color: #A1887F;
+    --accent-color: #FBC02D;
+    --background-color: #FDFBF9;
+    --text-color: #ffffff;
+    --hover-color: #6D4C41;
+    --hover-text-color: #2D2D2D;
+    --card-radius: 12px;
+    --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --transition-speed: 0.3s;
+    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === Base Styles === */
+body {
+    margin: 0;
+    font-family: var(--font-stack);
+    background-color: var(--background-color);
+    color: #333;
+}
+
+.logo {
+    width: 170px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+/* === Navbar === */
+.navbar {
+    width: 220px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 15px;
+    box-shadow: var(--box-shadow);
+}
+
+.navbar h2 {
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* === Navbar Links and Logout === */
+.navbar a,
+.logout a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 12px 20px;
+    border-radius: var(--card-radius);
+    font-weight: 500;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* === Change button hover for general navbar links === */
+.navbar a:hover {
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+}
+
+/* === Change button hover specifically for logout link === */
+.logout a:hover {
+    background-color: #ed2939; /* Set the hover color to red */
+    color: #fff; /* Optional: set text color to white */
+}
+
+.logout {
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+/* === Header === */
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    margin-left: 220px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: var(--box-shadow);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+/* === Main Content === */
+.main-content {
+    margin-left: 240px;
+    padding: 30px;
+    transition: margin-left var(--transition-speed);
+}
+
+/* === Customer Table === */
+.customer-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.customer-table th,
+.customer-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.customer-table th {
+    background-color: var(--primary-color);
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.customer-table td a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.customer-table td a:hover {
+    text-decoration: underline;
+}
+
+.customer-table button {
+    padding: 10px 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.approve-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.approve-btn:hover {
+    background-color: #45a049;
+}
+
+.reject-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.reject-btn:hover {
+    background-color: #e53935;
+}
+
+/* === Overlay === */
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(61, 61, 61, 0.7);
+    overflow: auto;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.overlay-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    width: 50%;
+    height: 50%;
+    max-width: 700px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 35px;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--accent-color);
+}
+
+.overlay-content h3 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.overlay-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Order Details Table */
+#order-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#order-details th,
+#order-details td {
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+    border: 1px solid #ddd;
+}
+
+#order-details th {
+    background-color: var(--hover-color);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#order-details td {
+    background-color: #f9f9f9;
+    color: var(--primary-color);
+}
+
+#order-details tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+        padding: 10px;
+    }
+
+    .main-content,
+    .header {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .overlay-content {
+        width: 90%;
+    }
+
+    .close-btn {
+        top: 10px;
+        right: 10px;
+        font-size: 28px;
+    }
+
+    .customer-table th,
+    .customer-table td {
+        font-size: 14px;
+    }
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

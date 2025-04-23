@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessed Oven | Cashier</title>
+    <link rel="stylesheet" href="Cashier.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center">Cashier</h1>
+    <div class="row">
+        <!-- Product Selection -->
+        <div class="col-md-6">
+            <h3>Select Products</h3>
+            <form id="cashier-form">
+                <div class="form-group">
+                    <label for="category">Categories</label>
+                    <select id="category" class="form-control" onchange="displayProducts(this.value)">
+                        <option value="all">All</option>
+                        <option value="cakes">Cakes</option>
+                        <option value="pies">Pies</option>
+                        <option value="donuts">Donuts</option>
+                        <option value="cookies">Cookies</option>
+                    </select>
+                </div>
+                <div class="product-list" id="product-list">
+                    <!-- Product images and details will be inserted here dynamically -->
+                </div>
+            </form>
+        </div>
+
+        <!-- Receipt Section -->
+        <div class="col-md-6 receipt-container">
+            <h3>Receipt Details</h3>
+            <div class="receipt-header">
+                <div class="col">Product</div>
+                <div class="col">Quantity</div>
+                <div class="col">Price</div>
+            </div>
+
+            <div id="receipt">
+                <p>No items added to receipt yet.</p>
+            </div>
+
+            <hr class="receipt-divider">
+
+            <div id="total" class="total">
+                Total: ₱0.00
+            </div>
+
+            <button id="generate-receipt" class="btn btn-success receipt-btn" onclick="generateReceipt()">Print Receipt</button>
+        </div>
+    </div>
+</div>
+
+<script src="Cashier.js"></script>
+
+</body>
+</html>

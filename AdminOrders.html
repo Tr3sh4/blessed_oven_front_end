@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessed Oven | Orders</title>
+    <link rel="stylesheet" href="AdminOrders.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For Icons -->
+</head>
+<body>
+
+
+<!-- Header Section with Admin Name -->
+<div class="header">
+    <div class="user-info">
+        <i class="fas fa-user"></i>
+        <span>Hello, Admin</span>
+    </div>
+</div>
+
+<!-- Navbar Section -->
+<div class="navbar">
+    <img src="Admin-SwiftEnrollLogo.png" alt="Logo" class="logo">
+    <a href="AdminDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="AdminForm.html"><i class="fas fa-user-graduate"></i>Customers</a>
+    <a href="AdminOrders.html"><i class="fas fa-book"></i>Orders</a>
+    <a href="AdminInventory.html"><i class="fas fa-book"></i>Inventory</a>
+    <a href="AdminSales.html"><i class="fas fa-wallet"></i> Sales</a>
+    
+    <div class="logout">
+        <!-- Add onclick event to trigger logout confirmation -->
+        <a href="javascript:void(0);" onclick="confirmLogout();"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <h2>Order Details</h2>
+
+    <div class="filter-section">
+        <label for="filter-date">Filter by Date:</label>
+        <input type="date" id="filter-date">
+    </div>
+
+    <table class="customer-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Order</th>
+                <th>Total Amount</th>
+                <th>Transaction Date</th>
+                <th>GCash Reference Number</th>
+                <th>Contact</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2504001</td>
+                <td>Juan Dela Cruz</td>
+                <td>
+                    <a href="javascript:void(0);" class="view-btn" data-name="Juan Dela Cruz" 
+                       data-order='[{"item":"Black Forest Cake", "quantity":1, "amount":600}, {"item":"Ube Cake", "quantity":2, "amount":650}]'
+                       data-address="123 Main Street, Pasig City" data-delivery="2025-04-05">VIEW</a>
+                </td>
+                <td>₱1,900.00</td>
+                <td>2025-04-01</td>
+                <td>0019 144 239168</td>
+                <td>09123456789</td>
+                <td>
+                    <button class="approve-btn">Done</button>
+                    <button class="reject-btn">Cancel</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2504002</td>
+                <td>Maria Santos</td>
+                <td>
+                    <a href="javascript:void(0);" class="view-btn" data-name="Maria Santos" 
+                       data-order='[{"item":"Classic Apple Pie", "quantity":1, "amount":250}, {"item":"Muffin", "quantity":3, "amount":250}]'
+                       data-address="456 Main Street, Pasig City" data-delivery="2025-04-06">VIEW</a>
+                </td>
+                <td>₱750.00</td>
+                <td>2025-04-02</td>
+                <td>1201 355 664871</td>
+                <td>092365485112</td>
+                <td>
+                    <button class="approve-btn">Done</button>
+                    <button class="reject-btn">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>    
+</div>
+
+<!-- Overlay Box for Customer Order Details -->
+<div id="overlay" class="overlay">
+    <div class="overlay-content">
+        <span id="close-overlay" class="close-btn">&times;</span>
+        <h3>Order Details for <span id="customer-name">Loading...</span></h3>
+        <p><strong>Address:</strong> <span id="customer-address">Loading...</span></p>
+        <p><strong>Delivery Date:</strong> <span id="delivery-date">Loading...</span></p>
+        <div id="order-details">Loading...</div>
+        <p><strong>Total Payment:</strong> ₱<span id="total-payment">Loading...</span></p>
+    </div>
+</div>
+
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link to external JS file -->
+    <script src="AdminOrders.js"></script>
+
+
+</body>
+</html>
